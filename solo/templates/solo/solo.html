@@ -1,0 +1,69 @@
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="dj4e" content="01 InahS Dlrow OlleH">
+    <title>Solo Page</title>
+</head>
+<body>
+
+    <h1>Welcome to Homework TimeCode_5110</h1>
+
+    <!-- 判断 ctx 是否为 null null 则不显示 -->
+    {% if field1 or field2  %}
+    <!-- 变量不为空的情况下执行的代码 -->
+        <p>Your result is {{field1}} {{field2}} </p>
+    {% endif %}
+
+
+
+    <form action="" method="post">
+        <!-- <input type="hidden" name="csrfmiddlewaretoken" value="AjFwwYd9D8fjbc5QYJdrdzcDbfissQ3IBq1uIwx4nAsEhkkGiATLs3VPFbI48IVN"> -->
+        {% csrf_token %}
+        <!-- 跨域预防 -->
+        <p>Field1: <input type="text" name="field1"></p>
+        <p>Field2: <input type="text" name="field2"></p>
+        <p><input type="submit" value="Submit"></p>
+    </form>
+    <!-- Hello to  everyone doing a view source -- Chuck -->
+    <script>
+       console.log('Hello to  everyone running the browser debugger -- Chuck');
+   </script>
+   <p>The instructions below are your assignment specification.  Your assignment solution
+    does not need to contain anything beyond the above "Submit" button.
+</p>
+<hr/>
+<p>
+    <ul>
+        <li>
+            This application takes two input fields, trims off any extra spaces from the beginning and end
+            of the values.
+            <li>
+                Then it concatenates the fields together with a space in between them.
+            </li>
+
+
+            <li>Then call the <b>title()</b> method on the string and display it as the result.</li>
+
+        </ul>
+    </p>
+    <p>
+        When this tool is <b>launched from the auto grader</b>, the above list defines how <b>your</b> application
+        is supposed to behave.
+        The specifications for your assignment <b>will change</b> once per 24 hours.  The changes will not be extensive.
+        The changes affect (a) how the strings are manipulated and (b) the time code value changes.  When you notice that
+        the specifications change you
+        will only need to change 3-4 lines of your application.
+    </p>
+    <p>
+        The instructor solution for this assignment uses one entry in <b>urls.py</b> and one view with a
+        <b>get()</b> and <b>post()</b> method and one template.  You do need do a redirect back to the
+        <b>get()</b> method at the end of the <b>post()</b> method.
+    </p>
+
+</body>
+</html>
+{% endblock %}
